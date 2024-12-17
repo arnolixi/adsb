@@ -43,4 +43,4 @@ cd /root/
 rm -rf /etc/nginx/nginx.conf  /etc/nginx/conf.d
 cp -af nginx/*  /etc/nginx/
 systemctl enable nginx
-systemctl start  nginx
+systemctl restart  nginx
