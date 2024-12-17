@@ -1,7 +1,7 @@
 # adsb
 
 ``` bash 
-# 登录到树莓派中，需要确认小盒子可以访问互联网
+# 登录到树莓派中，需要确认树莓派设备可以正常访问互联网
 sudo apt -y install git
 sudo git clone https://github.com/arnolixi/adsb.git
 cd adsb
