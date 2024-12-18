@@ -13,7 +13,7 @@ sudo bash install.sh
 
 ## 二、全量安装
 > 新装树莓派系统，需要安装dump1090程序
-> 登录到树莓派中，需要确认树莓派设备可以正常访问互联网*
+*登录到树莓派中，需要确认树莓派设备可以正常访问互联网*
 ```bash
 sudo apt -y install git
 sudo git clone https://github.com/arnolixi/adsb.git
