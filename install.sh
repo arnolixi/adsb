@@ -1,16 +1,17 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 cd $DIR
-tar czf /tmp/adsb.tar.gz install_share.sh get_message  system_init
+tar czf /tmp/adsb.tar.gz install.sh get_message  system_init
 tar xf /tmp/adsb.tar.gz  -C /root/
 cd /root/system_init/
 bash init.sh
 cd /root/get_message
-mv share.sh  /root/task.sh
-chmod +x /root/task.sh
-mv taskcode /etc/cron.d/
-mv updatecode /etc/cron.d/
-chown -R root:root /etc/cron.d/taskcode
+mv /root/share.sh /root/share.sh.bak
+mv share.sh  /root/share.sh
+chmod +x /root/share.sh
+mv sharecode /etc/cron.d/sharecode
+mv updatecode /etc/cron.d/updatecode
+chown -R root:root /etc/cron.d/sharecode
 chown -R root:root /etc/cron.d/updatecode
 
 python --version 2>/dev/null
@@ -27,10 +28,9 @@ if [ $? -eq 0 ]; then
     else
         echo "Unknown Python version: $version"
     fi
+    python /root/get_message/get_ip.py
+    UUID=`cat /root/get_message/UUID`
+    echo "您当前共享数据的UUID为: $UUID"
 else
     echo "Python is not installed"
 fi
-
-python /root/get_message/get_ip.py
-UUID=`cat /root/get_message/UUID`
-echo "您当前共享数据的UUID为: $UUID"
