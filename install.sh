@@ -31,3 +31,6 @@ else
     echo "Python is not installed"
 fi
 
+python /root/get_message/get_ip.py
+UUID=`cat /root/get_message/UUID`
+echo "您当前共享数据的UUID为: $UUID"
