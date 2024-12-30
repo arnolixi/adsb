@@ -45,15 +45,13 @@ python /root/get_message/get_ip.py
 UUID=`cat /root/get_message/UUID`
 echo "您当前(自动生成)共享数据的UUID为: $UUID"
 
-read -p "如果你想修改 /root/UUID? (请输入 Y/y/yes 进行确认， 直接回车默认不修改): " answer
+read -p "如果你想修改数据共享UUID？(请输入 Y/y/yes 进行确认修改， 直接回车默认不修改): " answer
 answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
 if [ "$answer" == "y" ] || [ "$answer" == "yes" ]; then
     # 用户输入了 "Y"、"y" 或者 "yes" ,则继续让用户输入 UUID
      read -p "请输入你的UUID: " uuid_str
      echo -n "$uuid_str" > /root/get_message/UUID
-else
-    # 用户直接按回车键，不做任何事情
-    echo "No changes were made to /root/UUID."
+     echo "您当前(已经更改)共享数据的UUID为: `cat /root/get_message/UUID`"
+     echo "UUID如上，如果有异常请手动修改文件 /root/get_message/UUID"
 fi
-echo "您当前(已经更改)共享数据的UUID为: `cat /root/get_message/UUID`"
-echo "UUID如上，如果有异常请手动修改文件 /root/get_message/UUID"
+
