@@ -11,8 +11,8 @@ mv share.sh  /root/share.sh
 chmod +x /root/share.sh
 mv sharecode /etc/cron.d/sharecode
 mv updatecode /etc/cron.d/updatecode
-chown -R root:root /etc/cron.d/sharecode
-chown -R root:root /etc/cron.d/updatecode
+chown -R root:root /etc/cron.d/updatecode /etc/cron.d/sharecode
+chmod 644 /etc/cron.d/updatecode /etc/cron.d/sharecode
 
 # 检测Python环境版本号
 PyPath=""

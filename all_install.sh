@@ -12,8 +12,8 @@ mv rtl-sdr-blacklist.conf /etc/modprobe.d/
 mv dump.sh /etc/init.d/dump
 mv updatecode /etc/cron.d
 mv taskcode   /etc/cron.d
-chown -R root:root /etc/cron.d/taskcode
-chown -R root:root /etc/cron.d/updatecode
+chown -R root:root /etc/cron.d/updatecode /etc/cron.d/taskcode
+chmod 644 /etc/cron.d/updatecode /etc/cron.d/taskcode
 chmod +x /etc/init.d/dump
 mv task.sh /root/
 chmod +x /root/task.sh

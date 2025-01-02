@@ -53,7 +53,7 @@ var planeObject = {
 
 	// Should create an icon for us to use on the map...
 	funcGetIcon	: function() {
-		// const prefix = 'https://file.veryzhun.com/buckets/adsb-dm/keys/';
+		const prefix = 'https://file.veryzhun.com/buckets/adsb-dm/keys/';
 
 		this.markerColor = '20200319-110959-xr2mm7mhtt7r9s32.png';
 		// If this marker is selected we should make it lighter than the rest.
@@ -82,7 +82,7 @@ var planeObject = {
 		// just keep on trucking.  :)
 
 		return new AMap.Icon({
-			image: this.markerColor,
+			image: prefix + this.markerColor,
 			size: new AMap.Size(32, 32),
 			imageSize: new AMap.Size(32, 32)
 		});
